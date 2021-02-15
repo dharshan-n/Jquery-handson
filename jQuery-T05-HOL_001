@@ -1,0 +1,93 @@
+Html file:
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+            integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="CSS/Scores.css" />
+</head>
+<body>
+    <form>
+        <table id="tborder">
+            <tr>
+                <td>1</td>
+                <td>Math1</td>
+                <td><input type="number" id="val1" /></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Math2</td>
+                <td><input type="number" id="val2" /></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Science</td>
+                <td><input type="number" id="val3" /></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>English</td>
+                <td><input type="number" id="val4" /></td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Sanskrit</td>
+                <td><input type="number" id="val5" /></td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Social Science</td>
+                <td><input type="number" id="val6" /></td>
+            </tr>
+            <tr id="result">
+                <td></td>
+                <td>Sum:</td>
+                <td><span id="sum">0</span></td>
+            </tr>
+
+        </table>
+    </form>
+
+    <script src="JS/Scores.js"></script>
+</body>
+</html>
+
+Javascript file:
+$("document").ready(function () {
+    i = parseInt($("#sum").text());
+    $('form input[type="number"]').each(function () {
+        $(this).keyup(function () {
+            i = i + parseInt(($(this).val()));
+            $("#sum").text(i);//($(this).val()));  
+        });
+    });
+});
+
+css file:
+
+
+table, td, th {
+    border: 1px solid black;
+    padding:10px;
+}
+#tborder {
+    font-family: sans-serif;
+    background-color: #e8dcff;
+    border-collapse:collapse;
+}
+input {
+    background-color: #feffb0;
+    font-weight: bold;
+    text-align: right;
+}
+
+#result {
+    color: #174c68;
+    font-weight: bold;
+    font-size: 18px;
+}
+

@@ -1,0 +1,63 @@
+Html file
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+            integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+            crossorigin="anonymous"></script>
+    <style>
+        #error {
+            color: red;
+        }
+
+        table, tr, td {
+            border: 1px solid black;
+        }
+        #tborder{
+            border-collapse:separate;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div id="error"></div>
+        <table>
+            <tr>
+                <td>Enter First Number:</td>
+                <td><input type="number" name="val1" id="val1" placeholder="Enter First Number"></td>
+            </tr>
+            <tr>
+                <td>Enter Second Number:</td>
+                <td><input type="number" name="val2" id="val2" placeholder="Enter Second Number"></td>
+            </tr>
+            <tr>
+                <td>Answer:</td>
+                <td><input type="number" name="ans" id="ans" placeholder="Answer"></td>
+            </tr>
+            <tr>
+                <td>Submit</td>
+                <td><input type="submit" value="Add" onclick="add_two_numbers()"></td>
+            </tr>
+        </table>
+    </div>
+    <script src="JS/Addtwonumbers.js"></script>
+</body>
+</html>
+
+
+
+Javascript file:
+
+function add_two_numbers() {
+    if ($("#val1").val() == "" || $("#val2").val() == "") {
+        $("#error").html("Pls.enter the Values");
+    }
+    else {
+        $("#error").empty();
+        $("#ans").val(parseInt($("#val1").val()) + parseInt($("#val2").val()));
+    }
+}

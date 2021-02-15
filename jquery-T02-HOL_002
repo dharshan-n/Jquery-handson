@@ -1,0 +1,51 @@
+Html file:
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+            integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+            crossorigin="anonymous"></script>
+</head>
+<body>
+    <div>
+        <input type="text" name="val" id="value" />
+        <input type="submit" value="search" id="search" />
+    </div>
+    <p>
+        <span>Jquery </span><span>traversing, </span><span>which </span><span>"move </span>
+        <span>through," </span><span>are </span><span>used </span><span>to </span><span>"find" </span>
+        <span>(or select) </span><span>HTML </span><span>elements </span><span>based </span>
+        <span>on </span><span>their </span><span>relation </span><span>to </span><span>other </span>
+        <span>elements.</span>
+    </p>
+    <script src="JS/Searchmescript.js"></script>
+</body>
+</html>
+
+
+
+Javascript file:
+$("document").ready(function () {
+
+    $("#value").keydown(function () {
+        $("span").removeAttr("style");
+    });
+
+    $("#search").on("click", function () {
+
+        $("span:contains('" + ($("#value").val()) + "')").css("text-shadow", "2px 2px pink").css("font-style", "italic");
+
+    });
+
+    $("p").children("span").mouseenter(function () {
+        $(this).css("background-color", "bisque")
+    });
+    $("p").children("span").mouseleave(function () {
+        $(this).removeAttr("style")
+    });
+
+
+});

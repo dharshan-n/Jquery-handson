@@ -1,0 +1,57 @@
+Html file:
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+            integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="CSS/todolist.css" />
+</head>
+<body>
+    <h1>To-Do List</h1>
+    <table>
+        <tr>
+            <td><label for="task">Task:</label></td>
+            <td><input type="text" id="task" name="task" /></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" id="add_task" value="Add task" /></td>
+        </tr>
+    </table>
+
+    <p>Today's Task are:</p>
+    <script src="JS/todolist.js"></script>
+</body>
+</html>
+
+
+Javascript file:
+
+$("document").ready(function () {
+    $("#add_task").click(function () {
+        if ($("#task").val() == "") {
+            alert("Enter task details!");
+        }
+        else {
+            $("p:last").after("<p>" + $("#task").val() + "</p>");
+        }
+    });
+});
+
+
+css file:
+
+css file:
+body {
+}
+p {
+    font-size: 15px;
+    color: blue;
+    margin-top: 10px;
+}
+
